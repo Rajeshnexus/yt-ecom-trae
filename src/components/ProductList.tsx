@@ -60,11 +60,13 @@ export const ProductList = () => {
   };
 
   return (
-    <div className="product-list">
+    <>
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
-        <button onClick={handleAdd}>Add Product</button>
-        <button onClick={() => signOut(auth)} style={{ background: '#ff4444', color: 'white' }}>Logout</button>
-      </div>
+    <button onClick={handleAdd}>Add Product</button>
+    {/* <button onClick={() => signOut(auth)} style={{ background: '#ff4444', color: 'white' }}>Logout</button> */}
+  </div>
+    <div className="product-list">
+     
       {showForm && (
         <form className="product-form" onSubmit={handleSubmit} style={{ marginBottom: '2rem', border: '1px solid #ccc', padding: '1rem' }}>
           <input name="name" value={form.name} onChange={handleChange} placeholder="Name" required />
@@ -87,5 +89,7 @@ export const ProductList = () => {
         </div>
       ))}
     </div>
+    </>
+  
   );
 }
